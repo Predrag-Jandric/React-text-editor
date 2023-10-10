@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+  
+//Require Editor CSS files.
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
+import "froala-editor/js/plugins.pkgd.min.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import FroalaEditorComponent from "react-froala-wysiwyg";
+
+export default function  App() {
+  
+   return (  
+    <div className="app">
+    
+    <article className="editor-container">
+      <FroalaEditorComponent 
+      tag="textarea"
+      
+      />
+
+
+      <button 
+      onClick={() => alert("NO FUNCTIONALITY TO THIS BTN")}
+      className="editor-container__btn"
+      >Submit</button>
+      </article>
     </div>
-  );
-}
-
-export default App;
+      );
+    }
