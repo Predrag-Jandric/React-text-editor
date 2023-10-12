@@ -1,67 +1,80 @@
+// font used
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap');
 
-* {
-  padding: 0;
+// general properties
+body {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'AR One Sans', sans-serif;
-  }
+}
 
-// tailwind color codes copied
-$whitemodeBG: #cbd5e1; // slate 300
-$whitemodeTEXT: #f4f4f5; // zinc 100
+// them color variables
+$whitemodeBG: #cbd5e1; 
+$whitemodeTEXT: #3f3f46; 
 
-$darkmodeBG: #1e293b; // slate 800
-$darkmodeTEXT: #3f3f46; // zinc 700
+$darkmodeBG: #1e293b; 
+$darkmodeTEXT: #f4f4f5; 
 
+// them color variable classes
+.light {
+  background-color: $whitemodeBG;
+  color: $whitemodeTEXT;
+}
 
-.app {
+.dark {
+  background-color: $darkmodeBG;
+  color: $darkmodeTEXT;
+}
+
+// normal properties
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: $darkmodeBG;
-  color: $whitemodeTEXT;
+  // border: 1px solid red;
 
-}
+  .header {
+    max-width: 900px;
+    margin: 3rem 1.3rem;
+    text-align: center;
+    font-size: 1.6rem;
 
-.header {
-  max-width: 900px;
-  margin: 3rem 1.3rem;
-  text-align: center;
-
-  font-size: 1.6rem;
-  
-}
-
-
-.editor-container {
-  // max-width: 80vw;
-  max-width: 900px;
-  margin: 0 1.3rem;
-
-  &__btn {
-    margin-top: 1rem;
-    cursor: pointer;
-    outline: 0;
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-    display: inline-block;
-    border: 1px solid transparent;
-    padding: 0.5rem 1rem;
-    font-size: 16px;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
-    &:hover {
-      color: #fff;
-      background-color: #0b5ed7;
-      border-color: #0a58ca;
+    &__h1 {
+      margin: 0.8rem;
     }
+  }
+
+  .text-editor {
+    max-width: 900px;
+    margin: 3rem 1.3rem;
+    overflow-x: hidden;
+
   }
 }
 
+// ---- global -----
+.globalBtn {
+  margin-top: 1rem;
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+  }
+}
 /* button is copy pasted from this website https://copy-paste-css.com/ */
 
