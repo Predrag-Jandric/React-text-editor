@@ -35,7 +35,7 @@ export default function App() {
         <FroalaEditorComponent
           tag="textarea"
           model={model}
-          onModelChange={e => setModel(e)}
+          onModelChange={(e) => setModel(e)}
           config={{
             saveInterval: 1000,
             events: {
@@ -50,6 +50,7 @@ export default function App() {
           className="globalBtn"
         >Submit</button>
       </article>
+
     </section>
   );
 }
