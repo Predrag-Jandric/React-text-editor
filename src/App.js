@@ -4,12 +4,16 @@ import './App.scss';
 import "froala-editor/css/froala_style.min.css";
 import "froala-editor/css/froala_editor.pkgd.min.css";
 import "froala-editor/js/plugins.pkgd.min.js";
+import "froala-editor/js/plugins/save.min.js";
 import FroalaEditorComponent from "react-froala-wysiwyg";
 
 import { useState } from 'react';
 
 export default function App() {
   const [isDark, setIsDark] = useState(true)
+  const [model, setModel] = useState(() => {
+    return localStorage.getItem("savedHtml" || "")
+  })
 
   const toggleTheme = () => {
     setIsDark(!isDark)
@@ -30,9 +34,19 @@ export default function App() {
       <article className="text-editor">
         <FroalaEditorComponent
           tag="textarea"
+          model={model}
+          onModelChange={e => setModel(e)}
+          config={{
+            saveInterval: 1000,
+            events: {
+              "save.before": function (html) {
+                localStorage.setItem("savedHtml", html)
+              }
+            }
+          }}
         />
         <button
-          onClick={() => alert("NO FUNCTIONALITY TO THIS BTN")}
+          onClick={() => alert("NO FUNCTIONALITY TO THIS BUTTON")}
           className="globalBtn"
         >Submit</button>
       </article>
